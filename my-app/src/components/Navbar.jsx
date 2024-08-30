@@ -84,7 +84,7 @@ const Navbar = () => {
           className="text-gray-300 ml-3 text-3xl font-extrabold tracking-wide bg-clip-text text-transparent bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900"
           style={{ fontFamily: 'Montserrat, sans-serif' }}
         >
-          Edusell
+          TOKEN SHAK
         </span>
       </Link>
       <div className="flex items-center gap-4">
