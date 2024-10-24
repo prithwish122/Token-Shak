@@ -22,6 +22,12 @@ Refered by HackQuest
 
 - Node.js installed on your machine
 
+### Add Contract to Wallet
+
+- Contract Address = 0x966a1B74BB212B6eDa327c10ba4a48d15a43f3bF
+
+- [Verify Contract Address](https://testnet.aiascan.com/token/0x966a1B74BB212B6eDa327c10ba4a48d15a43f3bF)
+
 ### Installation
 
 1. Clone the repository:
