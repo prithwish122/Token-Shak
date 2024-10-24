@@ -6,13 +6,13 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 
 contract MyCustomToken is ERC20, Ownable {
     // Constructor that initializes the ERC20 token with a name and symbol and sets the owner
-    constructor() ERC20("CBToken", "TST") Ownable(msg.sender) {
+    constructor() ERC20("TokenShak", "TST") Ownable(msg.sender) {
         // Mint initial supply of tokens to the contract deployer's address
         // _mint(msg.sender, 1000000 * 10 ** decimals());
     }
 
     // Function to mint new tokens, restricted to the contract owner
-    function mint(address to, uint256 amount) public onlyOwner {
+    function mint(address to, uint256 amount) public  {
         _mint(to, amount);
     }
 

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
+import { BrowserProvider, ethers } from 'ethers'
+import tokenShak from '../contractInfo/TokenShak.json'
 
 // Updated LogoSVG component (if needed)
 const LogoSVG = () => (
@@ -72,7 +74,18 @@ const Navbar = () => {
     }
   };
 
-  const handleClaimPrize = () => {
+  const handleClaimPrize = async () => {
+    const contractAddress = "0x966a1B74BB212B6eDa327c10ba4a48d15a43f3bF";
+    const amount = 5;
+    const provider = new BrowserProvider(window.ethereum);
+
+    const signer = await provider.getSigner()
+    const movieRev = new ethers.Contract(contractAddress, tokenShak.abi, signer)
+    // mint();
+    console.log(amount, account,"========inside withdraw===")
+
+    await (await movieRev.mint(account, ethers.parseUnits(amount.toString(), 18))).wait();
+
     alert('Prize claimed successfully!'); // Replace this with actual logic for claiming the prize
   };
 

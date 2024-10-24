@@ -27,6 +27,11 @@ const config: HardhatUserConfig = {
       accounts:
         process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
     },
+    aia: {
+      url: 'https://aia-dataseed1-testnet.aiachain.org',
+      accounts: process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
+      chainId: 1320,
+    }
   },
 };
 
