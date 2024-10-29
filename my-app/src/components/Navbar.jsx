@@ -76,7 +76,7 @@ const Navbar = () => {
 
   const handleClaimPrize = async () => {
     const contractAddress = "0x966a1B74BB212B6eDa327c10ba4a48d15a43f3bF";
-    const amount = 5;
+    const amount = 50;
     const provider = new BrowserProvider(window.ethereum);
 
     const signer = await provider.getSigner()

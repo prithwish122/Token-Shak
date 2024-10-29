@@ -18,8 +18,8 @@ const InvestorsPage = () => {
 
   const cards = [
     {
-      gameplayLink: "https://example.com/gameplay1",
-      gameName: "Game 1",
+      gameplayLink: "https://example.com/Galaxy",
+      gameName: "GALAXY",
       gameId: "12345",
       steamId: "STEAM123",
       minFundingReq: "$50",
@@ -28,7 +28,7 @@ const InvestorsPage = () => {
     },
     {
       gameplayLink: "https://example.com/gameplay2",
-      gameName: "Game 2",
+      gameName: "PVT",
       gameId: "67890",
       steamId: "STEAM456",
       minFundingReq: "$100",
@@ -67,7 +67,7 @@ const InvestorsPage = () => {
     const movieRev = new ethers.Contract(contractAddress, tokenShak.abi, signer)
     // mint();
     
-    await (await movieRev.mint(selectedCard.walletAddress, ethers.parseUnits(amount.toString(), 18))).wait();
+    await (await movieRev.transfer(selectedCard.walletAddress, ethers.parseUnits(amount.toString(), 18))).wait();
     handleClosePopup();
     
     alert('Transaction Complete!!');
@@ -83,9 +83,9 @@ const InvestorsPage = () => {
           <div className={`inner-card w-full h-full bg-gradient-to-r ${card.bgGradient} rounded-lg shadow-lg transform transition-transform duration-500 hover:rotate-y-15 hover:scale-105`}>
             <div className="p-6 flex flex-col items-center text-white">
               <h3 className="text-xl font-semibold mb-2">{card.gameName}</h3>
-              <p className="mb-2"><strong>Gameplay Link:</strong> <a href={card.gameplayLink} className="text-blue-300 hover:underline" target="_blank" rel="noopener noreferrer">{card.gameplayLink}</a></p>
-              <p className="mb-2"><strong>Game ID:</strong> {card.gameId}</p>
-              <p className="mb-2"><strong>Steam ID:</strong> {card.steamId}</p>
+              <p className="mb-2"><strong>Token Link:</strong> <a href={card.gameplayLink} className="text-blue-300 hover:underline" target="_blank" rel="noopener noreferrer">{card.gameplayLink}</a></p>
+              <p className="mb-2"><strong>Token ID:</strong> {card.gameId}</p>
+              <p className="mb-2"><strong>Block Exploerer ID:</strong> {card.steamId}</p>
               <p className="mb-2"><strong>Wallet Address:</strong> {card.walletAddress.slice(0, 6) + "..." + card.walletAddress.slice(-4)}</p>
               <p className="mb-4"><strong>Min Funding Req:</strong> {card.minFundingReq}</p>
               <button
